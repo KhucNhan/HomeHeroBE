@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
-public class User {
+public class User extends BaseEntity{
 
     @jakarta.persistence.Id
     @Id
