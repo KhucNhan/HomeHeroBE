@@ -61,7 +61,7 @@ public class WorkerProfileController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('WORKER')")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<WorkerProfileResponse> create(@AuthenticationPrincipal UserDetails userDetails,
                                                         @Valid @RequestBody WorkerProfileRequest request) {
         Long userId = getCurrentUserId(userDetails);
