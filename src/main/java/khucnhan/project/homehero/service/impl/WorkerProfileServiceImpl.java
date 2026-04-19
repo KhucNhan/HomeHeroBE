@@ -3,6 +3,7 @@ package khucnhan.project.homehero.service.impl;
 import khucnhan.project.homehero.dto.request.WorkerProfileRequest;
 import khucnhan.project.homehero.dto.response.SkillResponse;
 import khucnhan.project.homehero.dto.response.WorkerProfileResponse;
+import khucnhan.project.homehero.enums.Role;
 import khucnhan.project.homehero.exception.BadRequestException;
 import khucnhan.project.homehero.exception.ResourceNotFoundException;
 import khucnhan.project.homehero.model.Skill;
@@ -43,6 +44,7 @@ public class WorkerProfileServiceImpl implements WorkerProfileService {
         profile.setIsVerified(false);
         profile.setRatingAvg(0.0);
         profile.setTotalJobs(0);
+        user.setRole(Role.WORKER);
 
         return toResponse(workerProfileRepository.save(profile));
     }
